@@ -65,21 +65,31 @@
 
 # Project Report Collaboration Insights
 
-**TB1** Las tareas correspondientes a la TB1 han sido completadas y están debidamente documentadas en el repositorio de GitHub para Pawfect Care-Report. Puedes acceder al repositorio a través del siguiente enlace: [https://github.com/1ASI0730-2510-4370-G4-PetNova/Report-Pet-Nova](https://github.com/1ASI0730-2510-4370-G4-PetNova/Report-Pet-Nova)
+**TB1**Las tareas asignadas a la TB1 han sido finalizadas y se encuentran correctamente documentadas en el repositorio de GitHub de PetNova-Report. Puedes acceder al repositorio mediante el siguiente enlace: [https://github.com/1ASI0730-2510-4370-G4-PetNova/Report-Pet-Nova](https://github.com/1ASI0730-2510-4370-G4-PetNova/Report-Pet-Nova)
 
-Durante la fase de elaboración del informe, se realizaron las siguientes actividades:
+Durante la fase de preparación del informe, se llevaron a cabo las siguientes actividades:
 
-- Se crearon y redactaron los contenidos asignados a cada miembro utilizando formato Markdown, y se realizaron "Conventional Commits" para registrar el progreso en el repositorio.
+- Se redactaron y crearon los contenidos asignados a cada miembro utilizando formato Markdown, y se realizaron "Conventional Commits" para documentar el avance en el repositorio.
 
--  Se generaron los recursos necesarios y agregaron las imagenes al repositorio en la carpeta "assets" en cada rama del informe.
+- Se generaron los recursos necesarios y se añadieron las imágenes al repositorio en la carpeta "assets" correspondiente a cada rama del informe.
 
-- Se organizaron reuniones para coordinar el avance de los componentes del informe y para proporcionar actualizaciones sobre los progresos del Sprint 1, que se centró en el desarrollo de la Landing Page.
+- Se organizaron reuniones para coordinar el progreso de los componentes del informe y para proporcionar actualizaciones sobre los avances del Sprint 1, el cual estuvo enfocado en el desarrollo de la Landing Page.
 
-![Insight1](./assets/Chapter01/insight1.png)
-![Insight2](./assets/Chapter01/insight2.png)
-![Insight4](./assets/Chapter01/insight4.png)
-![Insight3](./assets/Chapter01/insight3.png)
-![Insight5](./assets/Chapter01/insight5.png)
+<div style="text-align: center;">
+  <img src="https://i.imgur.com/klHjaU3.png[/img]" alt="Imagen del Journey Mapp Owner" width="100%" />
+</div>
+
+<div style="text-align: center;">
+  <img src="https://i.imgur.com/QjM1Hb3.png[/img]" alt="Imagen del Journey Mapp Owner" width="100%" />
+</div>
+
+<div style="text-align: center;">
+  <img src="https://i.imgur.com/mc1pvSA.png[/img]" alt="Imagen del Journey Mapp Owner" width="100%" />
+</div>
+
+<div style="text-align: center;">
+  <img src="https://i.imgur.com/LxOlB1y.png[/img]" alt="Imagen del Journey Mapp Owner" width="100%" />
+</div>
 
 # Contenido
 ## Tabla de contenidos

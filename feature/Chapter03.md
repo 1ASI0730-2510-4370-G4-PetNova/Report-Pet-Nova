@@ -15,62 +15,62 @@
 # Gestión de Usuarios
 **EP01: Como responsable del sistema, quiero administrar los usuarios para garantizar que solo personas autorizadas accedan a la plataforma.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US01          | Registro de Usuario        | Como usuario externo, quiero crear una cuenta en la plataforma para acceder a las funciones que ofrece el sistema.|
-| US02          | Como usuario, quiero restablecer mi contraseña si la olvido, para poder seguir accediendo a mi cuenta sin inconvenientes.|
-| US03          | Gestión de Perfiles de Usuarios | Como administrador, quiero administrar los perfiles de los usuarios para asegurar que su información y permisos estén siempre actualizados.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US01          | Registro de Usuario        | Como usuario externo, quiero crear una cuenta en la plataforma para acceder a las funciones que ofrece el sistema.|**Escenario 1:** El usuario desea crear una nueva cuenta en la plataforma <br>**Dado que** el usuario se encuentra en la sección de registro,<br>**Cuando** completa correctamente todos los datos solicitados (nombre completo, número telefónico, correo electrónico, dirección y contraseña),<br>**Entonces** el sistema debe permitirle finalizar el registro y mostrar un mensaje de confirmación de cuenta creada.<br><br>**Escenario 2:** El usuario utiliza un correo previamente registrado  <br>**Dado que** el usuario intenta registrarse con una dirección de correo que ya está vinculada a otra cuenta,  <br>**Cuando** introduce ese correo y envía el formulario de registro, <br>**Entonces** el sistema debe emitir un mensaje de advertencia indicando que el correo ya ha sido utilizado.<br><br>**Escenario 3:** El usuario omite campos obligatorios en el formulario<br>**Dado que** el usuario intenta registrarse sin proporcionar toda la información requerida,  <br>**Cuando** presiona el botón de registro sin haber completado todos los campos necesarios,  <br>**Entonces** el sistema debe desplegar un mensaje de error solicitando completar los campos faltantes.|EP01|
+| US02          |Recuperación de Contraseña |Como usuario, quiero restablecer mi contraseña si la olvido, para poder seguir accediendo a mi cuenta sin inconvenientes.|**Escenario 1:** El usuario desea restablecer su contraseña <br>**Dado que** el usuario ha olvidado su contraseña y accede a la sección de recuperación,<br>**Cuando** introduce su correo electrónico registrado y solicita restablecerla, <br>**Entonces** el sistema debe enviar un mensaje al correo con un enlace para crear una nueva contraseña.<br><br>**Escenario 2:** El usuario proporciona un correo que no está registrado <br>**Dado que** el usuario intenta recuperar el acceso usando un correo que no existe en la base de datos,  <br>**Cuando** envía el formulario con dicho correo,  <br>**Entonces** el sistema debe mostrar una notificación de error indicando que no se encontró ninguna cuenta con ese correo.<br><br>**Escenario 3:** El usuario no recibe el mensaje de recuperación <br>**Dado que** el usuario ha solicitado recuperar su contraseña, <br>**Cuando** han transcurrido más de 10 minutos sin recibir el correo de restablecimiento,  <br>**Entonces** el sistema debe ofrecerle la opción de reenviar el correo o contactar al soporte técnico.|EP01|
+| US03          | Gestión de Perfiles de Usuarios | Como administrador, quiero administrar los perfiles de los usuarios para asegurar que su información y permisos estén siempre actualizados.|**Escenario 1:** El administrador modifica los datos de un usuario  <br>**Dado que** el administrador se encuentra en la sección destinada a la administración de usuarios, <br>**Cuando** accede al perfil de un usuario y actualiza su información personal (nombre, correo electrónico, número telefónico y dirección), <br>**Entonces** el sistema debe guardar los cambios realizados y mostrar un mensaje que confirme la actualización exitosa.<br><br>**Escenario 2:** El administrador inhabilita una cuenta de usuario  <br>**Dado que** el administrador necesita suspender temporalmente el acceso de un usuario, <br>**Cuando** selecciona la opción de desactivación en el listado de usuarios,<br>**Entonces** el sistema debe marcar la cuenta como "inactiva", impidiendo que el usuario acceda hasta que sea reactivado.<br><br>**Escenario 3:** El administrador elimina un usuario del sistema  <br>**Dado que** el administrador está realizando tareas de mantenimiento en los perfiles de usuario,  <br>**Cuando** elige la opción de eliminar un perfil específico, <br>**Entonces** el sistema debe borrar de forma definitiva dicho perfil y toda su información relacionada, mostrando previamente una advertencia de confirmación.|EP01|
 
 ---
 
 # Gestión de Mascotas
 **EP02: Como usuario, quiero manejar la información de mis mascotas para mantener sus datos al día.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US04          | Creación de Perfil de Mascota | Como usuario, quiero registrar un perfil para mi mascota con el fin de guardar su información en la plataforma.|
-| US05          | Edición de Perfil de Mascota | Como usuario, quiero modificar el perfil de mi mascota para mantener su información actualizada cuando sea necesario.|
-| US06          | Visualización de Perfiles de Mascotas | Como usuario, quiero acceder a los perfiles de mis mascotas para consultar la información que he registrado sobre ellas.|
-| US07          | Búsqueda de Mascotas por ID | Como administrador, quiero buscar mascotas utilizando su ID para acceder de forma rápida a su información en el sistema.|
-| US08          | Gestión de Perfiles de Mascotas | Como administrador, quiero administrar los perfiles de las mascotas para garantizar que su información esté correctamente registrada y actualizada.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US04          | Creación de Perfil de Mascota | Como usuario, quiero registrar un perfil para mi mascota con el fin de guardar su información en la plataforma.|**Escenario 1:** El usuario registra un nuevo perfil para su mascota <br>**Dado que** el usuario se encuentra en la interfaz de creación de perfil de mascota, <br>**Cuando** completa todos los campos requeridos (nombre, fecha de nacimiento, raza, género e historial médico),  <br>**Entonces** el sistema debe permitir guardar el nuevo perfil y mostrar un mensaje que confirme la creación exitosa.<br><br>**Escenario 2:** El usuario omite campos obligatorios al registrar a su mascota  <br>**Dado que** el usuario intenta guardar un perfil sin llenar todos los campos necesarios, <br> **Cuando** uno o más de estos campos quedan vacíos, <br>**Entonces** el sistema debe mostrar un mensaje de error indicando que todos los campos requeridos deben ser completados.<br><br>**Escenario 3:** El usuario asigna un nombre repetido a una mascota  <br>**Dado que** el usuario está por registrar una nueva mascota,  <br>**Cuando** introduce un nombre ya utilizado en otra mascota de su cuenta,  **Entonces** el sistema debe emitir una advertencia indicando que el nombre ya existe y sugerir que elija otro o lo modifique para evitar confusiones.|EP02|
+| US05          | Edición de Perfil de Mascota | Como usuario, quiero modificar el perfil de mi mascota para mantener su información actualizada cuando sea necesario.|**Escenario 1:** El usuario actualiza la información del perfil de su mascota<br>**Dado que** el usuario se encuentra en la sección de edición del perfil de su mascota, <br>**Cuando** modifica datos del perfil, como el historial clínico o la raza,  <br>**Entonces** el sistema debe permitir guardar las actualizaciones realizadas y mostrar un mensaje confirmando que los cambios se han aplicado correctamente.<br><br>**Escenario 2:** El usuario intenta guardar el perfil sin completar la información obligatoria  <br>**Dado que** el usuario está realizando modificaciones en el perfil de su mascota,  <br>**Cuando** intenta guardar los cambios dejando uno o más campos obligatorios vacíos,  <br>**Entonces** el sistema debe desplegar un mensaje de error indicando que es necesario completar toda la información requerida para poder guardar.|EP02|
+| US06          | Visualización de Perfiles de Mascotas | Como usuario, quiero acceder a los perfiles de mis mascotas para consultar la información que he registrado sobre ellas.|**Escenario 1:** Acceso al perfil de mascota <br>**Dado que** el usuario ha iniciado sesión en el sistema, <br>**Cuando** selecciona una mascota de su lista de mascotas registradas, <br>**Entonces** el sistema debe mostrar toda la información registrada (nombre, especie, raza, historial médico, etc.).  <br><br>**Escenario 2:** Visualización de historial médico <br>**Dado que** el usuario accede al perfil de su mascota,  <br>**Cuando** navega a la sección de historial médico, <br>**Entonces** el sistema debe mostrar un listado cronológico de consultas, vacunas y tratamientos.|EP02|
+| US07          | Búsqueda de Mascotas por ID | Como administrador, quiero buscar mascotas utilizando su ID para acceder de forma rápida a su información en el sistema.|**Escenario 1:** Búsqueda exitosa por ID <br>**Dado que** el administrador ingresa el ID único de una mascota,  <br>**Cuando** ejecuta la búsqueda, <br>**Entonces** el sistema debe mostrar el perfil completo de la mascota asociada a ese ID. <br>**Escenario 2:** Búsqueda con ID inexistente <br>**Dado que** el administrador ingresa un ID no registrado, <br>**Cuando** ejecuta la búsqueda, <br>**Entonces** el sistema debe mostrar un mensaje claro: "No se encontró ninguna mascota con este ID".|EP02|
+| US08          | Gestión de Perfiles de Mascotas | Como administrador, quiero administrar los perfiles de las mascotas para garantizar que su información esté correctamente registrada y actualizada.|**Escenario 1:** Actualización de información básica <br>**Dado que** el administrador selecciona una mascota, <br>**Cuando** modifica datos como peso o condición médica, <br>**Entonces** el sistema debe guardar los cambios y mostrar un mensaje de confirmación. <br><br>**Escenario 2:** Eliminación de perfil <br>**Dado que** el administrador elige eliminar un perfil, <br>**Cuando** confirma la acción, <br>**Entonces** el sistema debe borrar el perfil y mostrar un mensaje: "Perfil eliminado correctamente". |EP02|
 
 ---
 
 # Gestión de Citas Veterinarias
 **EP03: Como usuario, quiero organizar las citas médicas de mis mascotas para asegurar su atención oportuna.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US09          | Agendamiento de Citas      | Como usuario, quiero programar citas veterinarias para asegurar que mi mascota reciba atención médica cuando lo necesite.|
-| US10          | Cancelación de Citas       | Como usuario, quiero cancelar una cita veterinaria si no puedo asistir, para evitar conflictos de horario y poder reprogramarla cuando sea conveniente.|
-| US11          | Gestión de Citas Veterinarias | Como administrador, quiero gestionar las citas veterinarias para coordinar de manera eficiente la atención de las mascotas.|
-| US12          | Búsqueda de Citas por ID   | Como administrador, quiero buscar citas utilizando su ID para acceder rápidamente a los detalles de la cita.|
-| US13          | Edición de Citas Veterinarias | Como administrador, quiero editar las citas para modificar la fecha o el estado según sea necesario.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US09          | Agendamiento de Citas      |Como usuario, quiero programar citas veterinarias para asegurar que mi mascota reciba atención médica cuando lo necesite|-**Escenario 1:** Agendamiento exitoso de cita<br>**Dado que** el usuario selecciona la opción "Nueva cita",<br>**Cuando** completa los campos requeridos (mascota, veterinario, fecha, hora y motivo) y confirma,<br>**Entonces** el sistema debe registrar la cita y mostrar un comprobante con los detalles.<br><br>**Escenario 2:** Intento de agendar en horario no disponible<br>**Dado que** el usuario intenta agendar una cita,<br>**Cuando** selecciona una fecha/hora ya ocupada,<br>**Entonces** el sistema debe mostrar horarios alternativos disponibles y no permitir el registro duplicado.|EP03|
+| US10          | Cancelación de Citas       | Como usuario, quiero cancelar una cita veterinaria si no puedo asistir, para evitar conflictos de horario y poder reprogramarla cuando sea conveniente.|**Escenario 1:** Cancelación exitosa de cita<br>**Dado que** el usuario accede a sus citas programadas,<br>**Cuando** selecciona "Cancelar cita" y confirma la acción,<br>**Entonces** el sistema debe eliminar el registro y liberar el horario.<br><br>**Escenario 2:** Intento de cancelar cita con menos de 24 horas de anticipación<br>**Dado que** el usuario intenta cancelar una cita,<br>**Cuando** faltan menos de 24 horas para la cita,<br>**Entonces** el sistema debe mostrar advertencia sobre posible penalización pero permitir la cancelación.|EP03|
+| US11          | Gestión de Citas Veterinarias | Como administrador, quiero gestionar las citas veterinarias para coordinar de manera eficiente la atención de las mascotas.|**Escenario 1:** El administrador consulta todas las citas agendadas <br>**Dado que** el administrador se encuentra en la sección de administración de citas, <br>**Cuando** accede a la lista de citas programadas, <br>**Entonces** el sistema debe mostrar un listado con todos los detalles de las citas, incluyendo la fecha, hora, veterinario asignado y el estado de cada cita (agendada, cancelada, etc.).<br><br>**Escenario 2:** El administrador filtra las citas por estado o fecha <br>**Dado que** el administrador está en la sección de gestión de citas, <br>**Cuando** utiliza los filtros disponibles para buscar citas según su estado (agendada, cancelada, completada) o por fecha, <br>**Entonces** el sistema debe mostrar únicamente las citas que cumplan con los criterios seleccionados.|EP03|
+| US12          | Búsqueda de Citas por ID   | Como administrador, quiero buscar citas utilizando su ID para acceder rápidamente a los detalles de la cita.|**Escenario 1:** El administrador localiza una cita mediante su ID  <br>**Dado que** el administrador se encuentra en la sección de gestión de citas, <br>**Cuando** ingresa el ID de una cita en el campo de búsqueda,  <br>**Entonces** el sistema debe mostrar la cita correspondiente al ID ingresado.<br><br>**Escenario 2:** El administrador ingresa un ID incorrecto <br>**Dado que** el administrador está buscando una cita a través de su ID, <br>**Cuando** introduce un ID que no corresponde a ninguna cita en el sistema, <br>**Entonces** el sistema debe mostrar un mensaje de error indicando que no se ha encontrado ninguna cita con ese ID.|EP03|
+| US13          | Edición de Citas Veterinarias | Como administrador, quiero editar las citas para modificar la fecha o el estado según sea necesario.|- **Escenario 1:** El administrador modifica la fecha de una cita <br>**Dado que** el administrador se encuentra en la sección de gestión de citas,  <br>**Cuando** selecciona una cita y ajusta su fecha o hora, <br>**Entonces** el sistema debe actualizar la cita con la nueva información y enviar una notificación al usuario afectado informándole del cambio.<br><br>**Escenario 2:** El administrador actualiza el estado de una cita  <br>**Dado que** el administrador está gestionando las citas,  <br>**Cuando** selecciona una cita y cambia su estado (por ejemplo, de agendada a completada o cancelada), <br>**Entonces** el sistema debe reflejar el nuevo estado y enviar una actualización al usuario de la cita.|EP03|
 
 ---
 
 # Gestión de Notificaciones
 **EP04: Como usuario, quiero recibir alertas sobre eventos importantes relacionados con mis mascotas para estar siempre informado.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US14          | Notificación de Citas Veterinarias | Como usuario, quiero recibir notificaciones sobre mis citas veterinarias para recordar cuándo debo llevar a mi mascota al veterinario.|
-| US15          | Notificación de Historial Médico | Como usuario, quiero recibir notificaciones sobre actualizaciones en el historial médico de mi mascota para estar informado sobre su salud.|
-| US16          | Gestión de Notificaciones   | Como administrador, quiero gestionar el envío de notificaciones para asegurarme de que los usuarios reciban la información importante de manera oportuna.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US14          | Notificación de Citas Veterinarias | Como usuario, quiero recibir notificaciones sobre mis citas veterinarias para recordar cuándo debo llevar a mi mascota al veterinario.|**Escenario 1:** El usuario recibe un recordatorio de su cita veterinaria <br>**Dado que** el usuario ha agendado una cita con el veterinario,  <br>**Cuando** faltan 24 horas para la cita, <br>**Entonces** el sistema debe enviar una notificación al usuario recordándole la cita, incluyendo los detalles como la fecha, hora y veterinario asignado.<br><br>**Escenario 2:** El usuario recibe un recordatorio el día de la cita <br>**Dado que** el usuario tiene una cita con el veterinario programada, <br>**Cuando** es el mismo día de la cita, una hora antes de la hora establecida, <br>**Entonces** el sistema debe enviar una notificación final de recordatorio.|EP04
+| US15          | Notificación de Historial Médico | Como usuario, quiero recibir notificaciones sobre actualizaciones en el historial médico de mi mascota para estar informado sobre su salud.|**Escenario 1:** El usuario recibe una notificación de cambios en el historial médico <br>**Dado que** el veterinario ha realizado actualizaciones en el historial médico de la mascota, <br>**Cuando** se añaden nuevos registros como vacunas, diagnósticos o tratamientos, <br>**Entonces** el sistema debe enviar una notificación al usuario informándole que se han realizado actualizaciones en el historial médico de su mascota.<br><br>**Escenario 2:** El usuario recibe una notificación sobre los resultados de exámenes médicos  <br>**Dado que** el usuario está esperando los resultados de un examen médico para su mascota, <br>**Cuando** el veterinario sube los resultados al sistema, <br>**Entonces** el sistema debe notificar al usuario que los resultados están disponibles para su revisión.|EP04
+| US16          | Gestión de Notificaciones   | Como administrador, quiero gestionar el envío de notificaciones para asegurarme de que los usuarios reciban la información importante de manera oportuna.|**Escenario 1:** El administrador configura el envío de notificaciones <br>**Dado que** el administrador se encuentra en la sección de gestión de notificaciones, <br>**Cuando** define los criterios para el envío de notificaciones (por ejemplo, recordatorios de citas 24 horas antes), <br>**Entonces** el sistema debe programar el envío de las notificaciones de acuerdo con los criterios establecidos.<br><br>**Escenario 2:** El administrador cancela una notificación programada  <br>**Dado que** el administrador ha programado una notificación para una cita, <br>**Cuando** la cita es cancelada o reprogramada, <br>**Entonces** el sistema debe cancelar la notificación previamente programada o ajustarla a la nueva fecha y hora de la cita.|EP04|
 
 ---
 
 # Navegación y Funcionalidades de la Página Principal
 **EP05: Como visitante, quiero explorar la página de inicio de PetNova para conocer sus servicios y funcionalidades.**
 
-| User Story ID | Título                                     | Descripción                                                                                                                                                     |
-|---------------|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US17          | Barra de Navegación en la Landing Page     | Como visitante, quiero utilizar la barra de navegación para acceder de manera fácil y rápida a las distintas secciones de la plataforma.|
-| US18          | Visualización de la Sección "Why Choose Us?" | Como visitante, quiero revisar la sección 'Why Choose Us?' para comprender los beneficios y servicios que ofrece la plataforma.|
-| US19          | Gestión de Suscripciones en la Landing Page | Como visitante, quiero revisar los planes de suscripción en la página principal para poder elegir el plan que mejor se adapte a mis necesidades.|
-| US20          | Revisión de Reseñas de Clientes           | Como visitante, quiero leer las reseñas de otros clientes para evaluar la experiencia que han tenido con la plataforma.|
-| US21          | Envío de Mensajes de Contacto             | Como visitante, quiero enviar un mensaje de contacto a través de la página de aterrizaje para poder comunicarme con el equipo de PetNova.|
-| US22          | Visualización de Videos en la Sección de Características | Como visitante, quiero ver los videos informativos sobre los productos y servicios para obtener más información sobre PetNova.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US17          | Barra de Navegación en la Landing Page     | Como visitante, quiero utilizar la barra de navegación para acceder de manera fácil y rápida a las distintas secciones de la plataforma.|**Escenario 1:** Navegación a secciones principales<br>**Dado que** el visitante está en la landing page,<br>**Cuando** hace clic en un elemento de la barra de navegación (ej: "Servicios", "Contacto"),<br>**Entonces** el sistema debe redirigir suavemente a la sección correspondiente.<br><br>**Escenario 2:** Funcionamiento en dispositivos móviles<br>**Dado que** el visitante accede desde un móvil,<br>**Cuando** despliega el menú hamburguesa,<br>**Entonces** debe mostrar todas las opciones de navegación de forma legible.|EP05|
+| US18          | Visualización de la Sección "Why Choose Us?" | Como visitante, quiero revisar la sección 'Why Choose Us?' para comprender los beneficios y servicios que ofrece la plataforma.|**Escenario 1:** Visualización de beneficios<br>**Dado que** el visitante navega a "Why Choose Us?",<br>**Cuando** la página carga,<br>**Entonces** debe mostrar al menos 3 beneficios principales con iconos descriptivos.<br><br>**Escenario 2:** Interacción con elementos<br>**Dado que** el visitante pasa el cursor sobre un beneficio,<br>**Cuando** interactúa con él,<br>**Entonces** debe mostrar un efecto visual (ej: cambio de color).|EP05|
+| US19          | Gestión de Suscripciones en la Landing Page | Como visitante, quiero revisar los planes de suscripción en la página principal para poder elegir el plan que mejor se adapte a mis necesidades.|**Escenario 1:** Comparación de planes<br>**Dado que** el visitante ve la sección de suscripciones,<br>**Cuando** explora los planes,<br>**Entonces** debe mostrar tabla comparativa con precios y características clave.<br><br>**Escenario 2:** Selección de plan<br>**Dado que** el visitante hace clic en "Seleccionar" en un plan,<br>**Cuando** confirma,<br>**Entonces** debe redirigir al formulario de registro/pago.|EP05|
+| US20          | Revisión de Reseñas de Clientes           | Como visitante, quiero leer las reseñas de otros clientes para evaluar la experiencia que han tenido con la plataforma.|**Escenario 1:** Navegación entre reseñas<br>**Dado que** el visitante accede a las reseñas,<br>**Cuando** usa los controles de carrusel,<br>**Entonces** debe mostrar 3 reseñas por vista con estrellas de valoración.<br><br>**Escenario 2:** Verificación de autenticidad<br>**Dado que** el visitante lee una reseña,<br>**Cuando** busca detalles,<br>**Entonces** debe mostrar nombre y fecha de la reseña.|EP05|
+| US21          | Envío de Mensajes de Contacto             | Como visitante, quiero enviar un mensaje de contacto a través de la página de aterrizaje para poder comunicarme con el equipo de PetNova.|**Escenario 1:** Envío exitoso<br>**Dado que** el visitante completa el formulario,<br>**Cuando** hace clic en "Enviar" con datos válidos,<br>**Entonces** debe mostrar confirmación y vaciar los campos.<br><br>**Escenario 2:** Validación de campos<br>**Dado que** el visitante omite campos requeridos,<br>**Cuando** intenta enviar,<br>**Entonces** debe marcar errores sin enviar el formulario.|EP05|
+| US22          | Visualización de Videos en la Sección de Características | Como visitante, quiero ver los videos informativos sobre los productos y servicios para obtener más información sobre PetNova.|**Escenario 1:** Reproducción básica<br>**Dado que** el visitante hace clic en un video,<br>**Cuando** se inicia la reproducción,<br>**Entonces** debe mostrar controles estándar (play/pause, volumen).<br><br>**Escenario 2:** Optimización de carga<br>**Dado que** el visitante tiene conexión lenta,<br>**Cuando** carga la página,<br>**Entonces** debe mostrar miniaturas estáticas antes de reproducir.|EP05|
 
 ---
 
@@ -78,468 +78,53 @@
 **EP06: Como responsable, quiero manejar la información de los clientes para mantener un registro ordenado y actualizado.**
 
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US24          | Como administrador, quiero crear perfiles de clientes para registrar su información de contacto y los detalles de sus mascotas.|
-| US25          | Edición de Perfiles de Clientes | Como administrador, quiero crear perfiles de clientes para registrar su información de contacto y los detalles de sus mascotas.|
-| US26          | Búsqueda de Clientes por ID | Como administrador, quiero buscar clientes por su ID para acceder rápidamente a su información y gestionar los datos de sus mascotas.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US24          | Como administrador, quiero crear perfiles de clientes para registrar su información de contacto y los detalles de sus mascotas.|**Escenario 1:** Registro exitoso de nuevo cliente<br>**Dado que** el administrador accede al formulario de creación,<br>**Cuando** completa todos los campos obligatorios (nombre, teléfono, email) y guarda,<br>**Entonces** el sistema debe generar un ID único y mostrar mensaje de confirmación.<br><br>**Escenario 2:** Registro con datos incompletos<br>**Dado que** el administrador omite campos requeridos,<br>**Cuando** intenta guardar,<br>**Entonces** el sistema debe marcar los campos faltantes sin crear el perfil.|EP06|
+| US25          | Edición de Perfiles de Clientes | Como administrador, quiero crear perfiles de clientes para registrar su información de contacto y los detalles de sus mascotas.|**Escenario 1:** Actualización de información básica<br>**Dado que** el administrador selecciona un cliente existente,<br>**Cuando** modifica datos (ej: dirección o teléfono) y guarda,<br>**Entonces** el sistema debe registrar la fecha/hora de modificación y mostrar confirmación.<br><br>**Escenario 2:** Adición de nueva mascota<br>**Dado que** el administrador edita un perfil,<br>**Cuando** agrega una nueva mascota con datos completos,<br>**Entonces** debe vincularla automáticamente al cliente sin borrar mascotas existentes.|EP06|
+| US26          | Búsqueda de Clientes por ID | Como administrador, quiero buscar clientes por su ID para acceder rápidamente a su información y gestionar los datos de sus mascotas.|**Escenario 1:** Búsqueda exacta por ID<br>**Dado que** el administrador ingresa un ID completo (ej: "CLI-0123"),<br>**Cuando** ejecuta la búsqueda,<br>**Entonces** debe mostrar solo el perfil coincidente con botones de acción (editar/eliminar).<br><br>**Escenario 2:** Búsqueda parcial con sugerencias<br>**Dado que** el administrador escribe "CLI-01",<br>**Cuando** el sistema está procesando,<br>**Entonces** debe mostrar lista desplegable con máx. 5 clientes que coincidan parcialmente.|EP06|
 
 ---
 
 # Gestión de Almacen
 **EP07: Como administrador o veterinario, quiero manejar un registro interno de medicamentos y vacunas.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US27          | Creación de Nuevos Medicamentos | Como administrador, necesito poder ingresar información detallada de cada medicamento (nombre, dosis, fecha de caducidad, proveedor, etc.).|
-| US28          | Control de Vacunas | Como médico veterinario,para llevar un control de las vacunas administradas, necesito registrar el tipo de vacuna, fecha de aplicación, dosis, y el animal tratado.|
-| US29          | Generación de Reporte de Inventario | Como administrador, necesito generar reportes que muestren los medicamentos disponibles, próximos a caducar y agotados. |
-| US30          | Historial de Medicamnetos | Como médico veterinario, necesito acceder al historial completo de tratamientos y vacunas de un animal en específico. |
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US27          | Creación de Nuevos Medicamentos | Como administrador, necesito poder ingresar información detallada de cada medicamento (nombre, dosis, fecha de caducidad, proveedor, etc.).|- **Escenario 1:** Registro exitoso de medicamento <br>**Dado que** el administrador ingresa al módulo de registro de medicamentos, <br>**Cuando** completa todos los campos obligatorios (nombre, dosis, fecha caducidad, proveedor) y guarda, <br>**Entonces** el sistema debe almacenar el medicamento en la base de datos.<br><br>**Escenario 2:** Intento de registro con campos incompletos  <br>**Dado que** el administrador deja vacío el campo "medicamento"<br>**Cuando** intenta guardar el formulario, <br>**Entonces** el sistema debe mostrar una alerta: "Complete todos los campos obligatorios"|EP07|
+| US28          | Control de Vacunas | Como médico veterinario,para llevar un control de las vacunas administradas, necesito registrar el tipo de vacuna, fecha de aplicación, dosis, y el animal tratado.|- **Escenario 1:** Registro completo de vacunación <br>**Dado que** el veterinario selecciona un animal en el sistema, <br>**Cuando** ingresa tipo de vacuna, dosis, fecha y firma el registro, <br>**Entonces** el sistema debe vincular la vacuna al historial médico del animal y actualizar el stock automáticamente.<br><br>**Escenario 2:** Intento de registro con dosis inválida <br>**Dado que** el veterinario ingresa "0.01" en dosis (mínimo requerido: 0.1), <br>**Cuando** intenta guardar, <br>**Entonces** el sistema debe mostrar un mensaje indicando que la fecha no es válida y debe ser corregida recordando la dosis mínima.<br><br>**Escenario 3:** Vacuna ya aplicada recientemente<br>**Dado que** el animal recibió la misma vacuna hace menso de 21 días, <br>**Cuando** el veterinario intenta registrar otra dosis,  <br>**Entonces** el sistema debe mostrar un mensaje indicando la fecha de vacunación y un mensaje de confirmación.|EP07|
+| US29          | Generación de Reporte de Inventario | Como administrador, necesito generar reportes que muestren los medicamentos disponibles, próximos a caducar y agotados. |- **Escenario 1:** Generación de reporte general <br>**Dado que** el administrador selecciona "Generar reporte", <br>**Cuando** Cuando elige el filtro "Todos los medicamentos", <br>**Entonces** Exportar un PDF con: stock actual, caducidades próximas (<30 días) y agotados.<br><br>**Escenario 2:** Filtrado por caducidad<br><br>**Dado que** el administrador activa el filtro "Próximos a caducar",<br>**Cuando** genera el reporte, <br>**Entonces** Listar solo medicamentos con caducidad en los próximos 30 días.|EP07|
+| US30          | Historial de Medicamnetos | Como médico veterinario, necesito acceder al historial completo de tratamientos y vacunas de un animal en específico. |- **Escenario 1:** Consulta exitosa del historial <br>**Dado que** sel veterinario busca el animal por nombre de la mascota o del dueño, <br>**Cuando** accede a la pestaña "Historial de medicamentos",  <br>**Entonces** el sistema debe Mostrar lista cronológica (vacunas, tratamientos, fechas, dosis).<br><br>**Escenario 2:**  Mascota sin historial registrado <br>**Dado que** la mascota no tiene medicamentos registrados, <br>**Cuando** el veterinario accede al historial,  <br>**Entonces** el sistema debe mostrar un mensaje: "No hay registros médicos".|EP07|
 
 ---
 
 # Gestión del Historial Médico de las Mascotas
 **EP08: Como usuario o responsable, quiero gestionar el historial de salud de las mascotas para llevar un control de sus tratamientos.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US31          | Visualización del Historial Médico | Como usuario, quiero acceder al historial médico de mi mascota para poder consultar su estado de salud y los tratamientos que ha recibido anteriormente.|
-| US32          | Actualización del Historial Médico | Como administrador o veterinario, quiero poder modificar y actualizar el historial médico de las mascotas para asegurar que los dueños cuenten con información actualizada sobre sus tratamientos y estado de salud.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US31          | Visualización del Historial Médico | Como usuario, quiero acceder al historial médico de mi mascota para poder consultar su estado de salud y los tratamientos que ha recibido anteriormente.|**Escenario 1:** Consulta exitosa del historial médico de una mascota <br>**Dado que** soy un usuario autenticado dentro de la plataforma,<br>**Cuando** ingreso al perfil de mi mascota y selecciono la opción para ver su historial médico,  <br>**Entonces** el sistema debe mostrar todos los registros disponibles, incluyendo diagnósticos, tratamientos y citas anteriores.<br><br>**Escenario 2:** Historial médico sin registros disponibles  <br>**Dado que** soy un usuario autenticado revisando el perfil de mi mascota, <br>**Cuando** intento acceder a su historial médico y no hay datos registrados, <br>**Entonces** el sistema debe mostrar un mensaje informando que aún no existe información médica registrada para la mascota.|EP08|
+| US32          | Actualización del Historial Médico | Como administrador o veterinario, quiero poder modificar y actualizar el historial médico de las mascotas para asegurar que los dueños cuenten con información actualizada sobre sus tratamientos y estado de salud.|**Escenario 1:** Modificación exitosa del historial médico de una mascota <br>**Dado que** soy un administrador o un veterinario, <br>**Cuando** realizo una modificación en el historial médico de una mascota, como agregar un nuevo diagnóstico o tratamiento, <br>**Entonces** el sistema debe guardar los cambios y mostrar la información actualizada en el perfil de la mascota para que los usuarios puedan consultarla.<br><br>**Escenario 2:** Intento fallido de actualización por campos incompletos <br>**Dado que** soy un administrador o veterinario intentando modificar el historial médico, <br>**Cuando** omito completar uno o más campos obligatorios (como la fecha del diagnóstico o tratamiento), <br>**Entonces** el sistema debe mostrar un mensaje de error indicando que es necesario completar todos los campos requeridos antes de guardar.<br><br>**Escenario 3:** Revisión del historial de actualizaciones médicas <br>**Dado que** soy un administrador o veterinario, <br>**Cuando** ingreso al historial médico de una mascota que ha sido editado anteriormente, <br>**Entonces** el sistema debe permitir visualizar un registro detallado de todas las modificaciones, incluyendo las fechas y quién realizó cada cambio.|EP08|
 
 ---
 
 # Solución IOT
 **EP09: Como usuario o responsable, quiero gestionar el historial de salud de las mascotas para llevar un control de sus tratamientos.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US33          | Monitoreo de signos vitales | Como dueño de mascotas o veterinario, quiero integrar dispositivos IoT para monitorear la salud de las mascotas en tiempo real.|
-| US34          | Acceso remoto a datos de salud | Como veterinario, quiero visualizar los datos históricos de dispositivos IoT (actividad, sueño, ingesta de agua) para diagnosticar patrones anormales en mis pacientes.|
-| US35          | Configuración de umbrales de alerta | Como médico veterinario, quiero definir umbrales personalizados (ej: fiebre >39°C) para que el sistema envíe notificaciones automáticas a dueños y veterinarios.|
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US33          | Monitoreo de signos vitales | Como dueño de mascotas o veterinario, quiero integrar dispositivos IoT para monitorear la salud de las mascotas en tiempo real.|**Escenario 1:** Visualización de datos en tiempo real <br>**Dado que** un dispositivo IoT está conectado al sistema,  <br>**Cuando** el dispositivo envía datos de signos vitales (ej: frecuencia cardíaca, temperatura), <br>**Entonces** el sistema debe mostrarlos en un panel actualizado cada 5 segundos.  <br><br>**Escenario 2:** Conexión fallida de dispositivo <br>**Dado que** el dispositivo IoT pierde conexión, <br>**Cuando** el sistema detecta la desconexión por más de 10 segundos,  <br>**Entonces** debe mostrar una alerta al usuario y registrar el evento en el historial.  |EP09|
+| US34          | Acceso remoto a datos de salud | Como veterinario, quiero visualizar los datos históricos de dispositivos IoT (actividad, sueño, ingesta de agua) para diagnosticar patrones anormales en mis pacientes.|**Escenario 1:** Consulta de historial completo <br>**Dado que** el veterinario selecciona una mascota y un rango de fechas, <br>**Cuando** solicita el historial de salud (ej: últimos 7 días), <br>**Entonces** el sistema debe mostrar gráficos y tablas con los datos almacenados. <br><br>**Escenario 2:** Filtrado de datos por métrica <br>**Dado que** el veterinario necesita analizar solo la ingesta de agua, <br>**Cuando** aplica un filtro para esa métrica específica, <br>**Entonces** el sistema debe ocultar los datos no relevantes y resaltar tendencias anormales.|EP09|
+| US35          | Configuración de umbrales de alerta | Como médico veterinario, quiero definir umbrales personalizados (ej: fiebre >39°C) para que el sistema envíe notificaciones automáticas a dueños y veterinarios.|**Escenario 1:** Creación de un umbral personalizado <br>**Dado que** el veterinario accede a la configuración de alertas, <br>**Cuando** define un nuevo umbral (ej: temperatura >39°C para perros), **Entonces** el sistema debe guardar la regla y aplicarla a las mascotas asociadas. <br><br>**Escenario 2:** Notificación por umbral excedido **Dado que** se ha configurado un umbral para "actividad física <30min/día", <br>**Cuando** el dispositivo reporta un valor inferior, <br>**Entonces** el sistema debe enviar una notificación push y por correo al dueño y veterinario.|EP09|
 
 ---
 
 # Funcionalidades de Idioma en la App Web
 **EP010: Como usuario, quiero cambiar el idioma de la plataforma para utilizarla en español o inglés según mi preferencia.**
 
-| User Story ID | Título                     | Descripción                                                                                                                                                    |
-|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| US23          | Cambio de Idioma en la App Web | Como usuario, quiero tener la opción de cambiar el idioma de la aplicación web para poder utilizarla en inglés o español, de acuerdo con mi preferencia.|
-
----
-
-<br><br>
-# Historias de Usuario y Criterios de Aceptación
-## US01: Registro de Usuario
-**Relacionado con (Epic ID):** EP01
-
-**Descripción:**  
-Como administrador, deseo gestionar los usuarios para asegurar que solo personas autorizadas tengan acceso al sistema.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El usuario desea crear una nueva cuenta en la plataforma  
-  - **Dado que** el usuario se encuentra en la sección de registro,  
-  - **Cuando** completa correctamente todos los datos solicitados (nombre completo, número telefónico, correo electrónico, dirección y contraseña),  
-  - **Entonces** el sistema debe permitirle finalizar el registro y mostrar un mensaje de confirmación de cuenta creada.
-
-- **Escenario 2:** El usuario utiliza un correo previamente registrado  
-  - **Dado que** el usuario intenta registrarse con una dirección de correo que ya está vinculada a otra cuenta,  
-  - **Cuando** introduce ese correo y envía el formulario de registro,  
-  - **Entonces** el sistema debe emitir un mensaje de advertencia indicando que el correo ya ha sido utilizado.
-
-- **Escenario 3:** El usuario omite campos obligatorios en el formulario  
-  - **Dado que** el usuario intenta registrarse sin proporcionar toda la información requerida,  
-  - **Cuando** presiona el botón de registro sin haber completado todos los campos necesarios,  
-  - **Entonces** el sistema debe desplegar un mensaje de error solicitando completar los campos faltantes.
-
----
-
-## US02: Recuperación de Contraseña
-**Relacionado con (Epic ID):** EP01
-
-**Descripción:**  
-Como usuario, deseo recuperar mi contraseña en caso de olvidarla para no perder el acceso a mi cuenta.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El usuario desea restablecer su contraseña  
-  - **Dado que** el usuario ha olvidado su contraseña y accede a la sección de recuperación,  
-  - **Cuando** introduce su correo electrónico registrado y solicita restablecerla,  
-  - **Entonces** el sistema debe enviar un mensaje al correo con un enlace para crear una nueva contraseña.
-
-- **Escenario 2:** El usuario proporciona un correo que no está registrado  
-  - **Dado que** el usuario intenta recuperar el acceso usando un correo que no existe en la base de datos,  
-  - **Cuando** envía el formulario con dicho correo,  
-  - **Entonces** el sistema debe mostrar una notificación de error indicando que no se encontró ninguna cuenta con ese correo.
-
-- **Escenario 3:** El usuario no recibe el mensaje de recuperación  
-  - **Dado que** el usuario ha solicitado recuperar su contraseña,  
-  - **Cuando** han transcurrido más de 10 minutos sin recibir el correo de restablecimiento,  
-  - **Entonces** el sistema debe ofrecerle la opción de reenviar el correo o contactar al soporte técnico.
-
----
-
-## US03: Gestión de Perfiles de Usuarios
-**Relacionado con (Epic ID):** EP01
-
-**Descripción:**  
-Como administrador, deseo gestionar los perfiles de los usuarios para mantener la información y permisos actualizados.
-
-### Criterios de Aceptación:
--- **Escenario 1:** El administrador modifica los datos de un usuario  
-  - **Dado que** el administrador se encuentra en la sección destinada a la administración de usuarios,  
-  - **Cuando** accede al perfil de un usuario y actualiza su información personal (nombre, correo electrónico, número telefónico y dirección),  
-  - **Entonces** el sistema debe guardar los cambios realizados y mostrar un mensaje que confirme la actualización exitosa.
-
-- **Escenario 2:** El administrador inhabilita una cuenta de usuario  
-  - **Dado que** el administrador necesita suspender temporalmente el acceso de un usuario,  
-  - **Cuando** selecciona la opción de desactivación en el listado de usuarios,  
-  - **Entonces** el sistema debe marcar la cuenta como "inactiva", impidiendo que el usuario acceda hasta que sea reactivado.
-
-- **Escenario 3:** El administrador elimina un usuario del sistema  
-  - **Dado que** el administrador está realizando tareas de mantenimiento en los perfiles de usuario,  
-  - **Cuando** elige la opción de eliminar un perfil específico,  
-  - **Entonces** el sistema debe borrar de forma definitiva dicho perfil y toda su información relacionada, mostrando previamente una advertencia de confirmación.
-
----
-
-## US04: Creación de Perfil de Mascota
-**Relacionado con (Epic ID):** EP02
-
-**Descripción:**  
-Como usuario, deseo crear un perfil de mi mascota para tener su información almacenada en la plataforma.
-
-### Criterios de Aceptación:
-
-- **Escenario 1:** El usuario registra un nuevo perfil para su mascota  
-  - **Dado que** el usuario se encuentra en la interfaz de creación de perfil de mascota,  
-  - **Cuando** completa todos los campos requeridos (nombre, fecha de nacimiento, raza, género e historial médico),  
-  - **Entonces** el sistema debe permitir guardar el nuevo perfil y mostrar un mensaje que confirme la creación exitosa.
-
-- **Escenario 2:** El usuario omite campos obligatorios al registrar a su mascota  
-  - **Dado que** el usuario intenta guardar un perfil sin llenar todos los campos necesarios,  
-  - **Cuando** uno o más de estos campos quedan vacíos,  
-  - **Entonces** el sistema debe mostrar un mensaje de error indicando que todos los campos requeridos deben ser completados.
-
-- **Escenario 3:** El usuario asigna un nombre repetido a una mascota  
-  - **Dado que** el usuario está por registrar una nueva mascota,  
-  - **Cuando** introduce un nombre ya utilizado en otra mascota de su cuenta,  
-  - **Entonces** el sistema debe emitir una advertencia indicando que el nombre ya existe y sugerir que elija otro o lo modifique para evitar confusiones.
-
----
-
-## US05: Edición de Perfil de Mascota
-**Relacionado con (Epic ID):** EP02
-
-**Descripción:**  
-Como usuario, deseo editar el perfil de mi mascota para actualizar su información cuando sea necesario.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El usuario actualiza la información del perfil de su mascota  
-  - **Dado que** el usuario se encuentra en la sección de edición del perfil de su mascota,  
-  - **Cuando** modifica datos del perfil, como el historial clínico o la raza,  
-  - **Entonces** el sistema debe permitir guardar las actualizaciones realizadas y mostrar un mensaje confirmando que los cambios se han aplicado correctamente.
-
-- **Escenario 2:** El usuario intenta guardar el perfil sin completar la información obligatoria  
-  - **Dado que** el usuario está realizando modificaciones en el perfil de su mascota,  
-  - **Cuando** intenta guardar los cambios dejando uno o más campos obligatorios vacíos,  
-  - **Entonces** el sistema debe desplegar un mensaje de error indicando que es necesario completar toda la información requerida para poder guardar.
-
-  ---
-
-## US11: Gestión de Citas Veterinarias
-**Relacionado con (Epic ID):** EP03
-
-**Descripción:**  
-Como administrador, deseo gestionar las citas veterinarias para coordinar correctamente la atención de las mascotas.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El administrador consulta todas las citas agendadas  
-  - **Dado que** el administrador se encuentra en la sección de administración de citas,  
-  - **Cuando** accede a la lista de citas programadas,  
-  - **Entonces** el sistema debe mostrar un listado con todos los detalles de las citas, incluyendo la fecha, hora, veterinario asignado y el estado de cada cita (agendada, cancelada, etc.).
-
-- **Escenario 2:** El administrador filtra las citas por estado o fecha  
-  - **Dado que** el administrador está en la sección de gestión de citas,  
-  - **Cuando** utiliza los filtros disponibles para buscar citas según su estado (agendada, cancelada, completada) o por fecha,  
-  - **Entonces** el sistema debe mostrar únicamente las citas que cumplan con los criterios seleccionados.
-
----
-
-## US12: Búsqueda de Citas por ID
-**Relacionado con (Epic ID):** EP03
-
-**Descripción:**  
-Como administrador, deseo buscar citas por ID para acceder rápidamente a la información de la cita.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El administrador localiza una cita mediante su ID  
-  - **Dado que** el administrador se encuentra en la sección de gestión de citas,  
-  - **Cuando** ingresa el ID de una cita en el campo de búsqueda,  
-  - **Entonces** el sistema debe mostrar la cita correspondiente al ID ingresado.
-
-- **Escenario 2:** El administrador ingresa un ID incorrecto  
-  - **Dado que** el administrador está buscando una cita a través de su ID,  
-  - **Cuando** introduce un ID que no corresponde a ninguna cita en el sistema,  
-  - **Entonces** el sistema debe mostrar un mensaje de error indicando que no se ha encontrado ninguna cita con ese ID.
-
----
-
-## US13: Edición de Citas Veterinarias
-**Relacionado con (Epic ID):** EP03
-
-**Descripción:**  
-Como administrador, deseo editar las citas para hacer cambios en la fecha o estado cuando sea necesario.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El administrador modifica la fecha de una cita  
-  - **Dado que** el administrador se encuentra en la sección de gestión de citas,  
-  - **Cuando** selecciona una cita y ajusta su fecha o hora,  
-  - **Entonces** el sistema debe actualizar la cita con la nueva información y enviar una notificación al usuario afectado informándole del cambio.
-
-- **Escenario 2:** El administrador actualiza el estado de una cita  
-  - **Dado que** el administrador está gestionando las citas,  
-  - **Cuando** selecciona una cita y cambia su estado (por ejemplo, de agendada a completada o cancelada),  
-  - **Entonces** el sistema debe reflejar el nuevo estado y enviar una actualización al usuario de la cita.
-
----
-
-## US14: Notificación de Citas Veterinarias
-**Relacionado con (Epic ID):** EP04
-
-**Descripción:**  
-Como usuario, deseo recibir notificaciones de citas veterinarias para recordarme cuándo debo llevar a mi mascota al veterinario.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El usuario recibe un recordatorio de su cita veterinaria  
-  - **Dado que** el usuario ha agendado una cita con el veterinario,  
-  - **Cuando** faltan 24 horas para la cita,  
-  - **Entonces** el sistema debe enviar una notificación al usuario recordándole la cita, incluyendo los detalles como la fecha, hora y veterinario asignado.
-
-- **Escenario 2:** El usuario recibe un recordatorio el día de la cita  
-  - **Dado que** el usuario tiene una cita con el veterinario programada,  
-  - **Cuando** es el mismo día de la cita, una hora antes de la hora establecida,  
-  - **Entonces** el sistema debe enviar una notificación final de recordatorio.
-
----
-
-## US15: Notificación de Historial Médico
-**Relacionado con (Epic ID):** EP04
-
-**Descripción:**  
-Como usuario, deseo recibir notificaciones sobre actualizaciones en el historial médico de mi mascota para estar al tanto de su salud.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El usuario recibe una notificación de cambios en el historial médico  
-  - **Dado que** el veterinario ha realizado actualizaciones en el historial médico de la mascota,  
-  - **Cuando** se añaden nuevos registros como vacunas, diagnósticos o tratamientos,  
-  - **Entonces** el sistema debe enviar una notificación al usuario informándole que se han realizado actualizaciones en el historial médico de su mascota.
-
-- **Escenario 2:** El usuario recibe una notificación sobre los resultados de exámenes médicos  
-  - **Dado que** el usuario está esperando los resultados de un examen médico para su mascota,  
-  - **Cuando** el veterinario sube los resultados al sistema,  
-  - **Entonces** el sistema debe notificar al usuario que los resultados están disponibles para su revisión.
-
----
-
-## US16: Gestión de Notificaciones
-**Relacionado con (Epic ID):** EP04
-
-**Descripción:**  
-Como administrador, deseo gestionar el envío de notificaciones para asegurarme de que los usuarios reciban información importante a tiempo.
-
-### Criterios de Aceptación:
-- **Escenario 1:** El administrador configura el envío de notificaciones  
-  - **Dado que** el administrador se encuentra en la sección de gestión de notificaciones,  
-  - **Cuando** define los criterios para el envío de notificaciones (por ejemplo, recordatorios de citas 24 horas antes),  
-  - **Entonces** el sistema debe programar el envío de las notificaciones de acuerdo con los criterios establecidos.
-
-- **Escenario 2:** El administrador cancela una notificación programada  
-  - **Dado que** el administrador ha programado una notificación para una cita,  
-  - **Cuando** la cita es cancelada o reprogramada,  
-  - **Entonces** el sistema debe cancelar la notificación previamente programada o ajustarla a la nueva fecha y hora de la cita.
-
----
-
-## US27: Creación de Nuevos Medicamentos
-**Relacionado con (Epic ID):** EP07
-
-**Descripción:**  
-Como administrador, necesito poder ingresar información detallada de cada medicamento (nombre, dosis, fecha de caducidad, proveedor, etc.).
-
-### Criterios de Aceptación:
-- **Escenario 1:** Registro exitoso de medicamento  
-  - **Dado que** el administrador ingresa al módulo de registro de medicamentos,  
-  - **Cuando** completa todos los campos obligatorios (nombre, dosis, fecha caducidad, proveedor) y guarda,  
-  - **Entonces** el sistema debe almacenar el medicamento en la base de datos.
-
-- **Escenario 2:** Intento de registro con campos incompletos  
-  - **Dado que** el administrador deja vacío el campo "medicamento"
-  - **Cuando** intenta guardar el formulario,  
-  - **Entonces** el sistema debe mostrar una alerta: "Complete todos los campos obligatorios"
-
----
-
-## US28: Control de Vacunas
-**Relacionado con (Epic ID):** EP07
-
-**Descripción:**  
-Como médico veterinario,para llevar un control de las vacunas administradas, necesito registrar el tipo de vacuna, fecha de aplicación, dosis, y el animal tratado.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Registro completo de vacunación 
-  - **Dado que** el veterinario selecciona un animal en el sistema,  
-  - **Cuando** ingresa tipo de vacuna, dosis, fecha y firma el registro,  
-  - **Entonces** el sistema debe vincular la vacuna al historial médico del animal y actualizar el stock automáticamente.
-
-- **Escenario 2:** Intento de registro con dosis inválida 
-  - **Dado que** el veterinario ingresa "0.01" en dosis (mínimo requerido: 0.1), 
-  - **Cuando** intenta guardar,  
-  - **Entonces** el sistema debe mostrar un mensaje indicando que la fecha no es válida y debe ser corregida recordando la dosis mínima.
-
-  - **Escenario 3:** Vacuna ya aplicada recientemente
-  - **Dado que** el animal recibió la misma vacuna hace menso de 21 días,  
-  - **Cuando** el veterinario intenta registrar otra dosis,  
-  - **Entonces** el sistema debe mostrar un mensaje indicando la fecha de vacunación y un mensaje de confirmación.
-
----
-
-## US29: Generación de Reporte de Inventario
-**Relacionado con (Epic ID):** EP07
-
-**Descripción:**  
-Como administrador, necesito generar reportes que muestren los medicamentos disponibles, próximos a caducar y agotados.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Generación de reporte general  
-  - **Dado que** el administrador selecciona "Generar reporte",  
-  - **Cuando** Cuando elige el filtro "Todos los medicamentos",  
-  - **Entonces** Exportar un PDF con: stock actual, caducidades próximas (<30 días) y agotados.
-
-- **Escenario 2:** Filtrado por caducidad 
-  - **Dado que** el administrador activa el filtro "Próximos a caducar",
-  - **Cuando** genera el reporte,  
-  - **Entonces** Listar solo medicamentos con caducidad en los próximos 30 días.
-
----
-
-## US30: Historial de Medicamentos
-**Relacionado con (Epic ID):** EP07
-
-**Descripción:**  
-Como médico veterinario, necesito acceder al historial completo de tratamientos y vacunas de un animal en específico.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Consulta exitosa del historial 
-  - **Dado que** sel veterinario busca el animal por nombre de la mascota o del dueño,  
-  - **Cuando** accede a la pestaña "Historial de medicamentos",  
-  - **Entonces** el sistema debe Mostrar lista cronológica (vacunas, tratamientos, fechas, dosis).
-
-- **Escenario 2:**  Mascota sin historial registrado
-  - **Dado que** la mascota no tiene medicamentos registrados,  
-  - **Cuando** el veterinario accede al historial,  
-  - **Entonces** el sistema debe mostrar un mensaje: "No hay registros médicos".
-
-
----
-
-## US31: Visualización del Historial Médico
-**Relacionado con (Epic ID):** EP08
-
-**Descripción:**  
-Como usuario, deseo visualizar el historial médico de mi mascota para revisar su estado de salud y tratamientos previos.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Consulta exitosa del historial médico de una mascota  
-  - **Dado que** soy un usuario autenticado dentro de la plataforma,  
-  - **Cuando** ingreso al perfil de mi mascota y selecciono la opción para ver su historial médico,  
-  - **Entonces** el sistema debe mostrar todos los registros disponibles, incluyendo diagnósticos, tratamientos y citas anteriores.
-
-- **Escenario 2:** Historial médico sin registros disponibles  
-  - **Dado que** soy un usuario autenticado revisando el perfil de mi mascota,  
-  - **Cuando** intento acceder a su historial médico y no hay datos registrados,  
-  - **Entonces** el sistema debe mostrar un mensaje informando que aún no existe información médica registrada para la mascota.
-
----
-
-## US32: Actualización del Historial Médico
-**Relacionado con (Epic ID):** EP08
-
-**Descripción:**  
-Como administrador o doctor veterinario, deseo actualizar el historial médico de las mascotas para que los usuarios tengan la información más reciente sobre sus tratamientos.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Modificación exitosa del historial médico de una mascota  
-  - **Dado que** soy un administrador o un veterinario,  
-  - **Cuando** realizo una modificación en el historial médico de una mascota, como agregar un nuevo diagnóstico o tratamiento,  
-  - **Entonces** el sistema debe guardar los cambios y mostrar la información actualizada en el perfil de la mascota para que los usuarios puedan consultarla.
-
-- **Escenario 2:** Intento fallido de actualización por campos incompletos  
-  - **Dado que** soy un administrador o veterinario intentando modificar el historial médico,  
-  - **Cuando** omito completar uno o más campos obligatorios (como la fecha del diagnóstico o tratamiento),  
-  - **Entonces** el sistema debe mostrar un mensaje de error indicando que es necesario completar todos los campos requeridos antes de guardar.
-
-- **Escenario 3:** Revisión del historial de actualizaciones médicas  
-  - **Dado que** soy un administrador o veterinario,  
-  - **Cuando** ingreso al historial médico de una mascota que ha sido editado anteriormente,  
-  - **Entonces** el sistema debe permitir visualizar un registro detallado de todas las modificaciones, incluyendo las fechas y quién realizó cada cambio.
-
----
-
-## US33: Monitoreo de signos vitales
-**Relacionado con (Epic ID):** EP09
-
-**Descripción:** 
-Como dueño de mascotas o veterinario, quiero integrar dispositivos IoT para monitorear la salud de las mascotas en tiempo real.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Visualización de datos en tiempo real  
-  - **Dado que** un dispositivo IoT está conectado al sistema,  
-  - **Cuando** el dispositivo envía datos de signos vitales (ej: frecuencia cardíaca, temperatura),  
-  - **Entonces** el sistema debe mostrarlos en un panel actualizado cada 5 segundos.  
-
-- **Escenario 2:** Conexión fallida de dispositivo  
-  - **Dado que** el dispositivo IoT pierde conexión,  
-  - **Cuando** el sistema detecta la desconexión por más de 10 segundos,  
-  - **Entonces** debe mostrar una alerta al usuario y registrar el evento en el historial.  
-
-  ---
-
-  ## US34: Acceso remoto a datos de salud
-**Relacionado con (Epic ID):** EP09
-
-**Descripción:** 
-Como veterinario, quiero visualizar los datos históricos de dispositivos IoT (actividad, sueño, ingesta de agua) para diagnosticar patrones anormales en mis pacientes.
-
-### Criterios de Aceptación:
-### Escenarios:  
-- **Escenario 1:** Consulta de historial completo  
-  - **Dado que** el veterinario selecciona una mascota y un rango de fechas,  
-  - **Cuando** solicita el historial de salud (ej: últimos 7 días),  
-  - **Entonces** el sistema debe mostrar gráficos y tablas con los datos almacenados.  
-
-- **Escenario 2:** Filtrado de datos por métrica  
-  - **Dado que** el veterinario necesita analizar solo la ingesta de agua,  
-  - **Cuando** aplica un filtro para esa métrica específica,  
-  - **Entonces** el sistema debe ocultar los datos no relevantes y resaltar tendencias anormales.
-
----
-
-## US35: Configuración de umbrales de alerta
-**Relacionado con (Epic ID):** EP09
-
-**Descripción:** 
-Como médico veterinario, quiero definir umbrales personalizados (ej: fiebre >39°C) para que el sistema envíe notificaciones automáticas a dueños y veterinarios.
-
-### Criterios de Aceptación:
-- **Escenario 1:** Creación de un umbral personalizado  
-  - **Dado que** el veterinario accede a la configuración de alertas,  
-  - **Cuando** define un nuevo umbral (ej: temperatura >39°C para perros),  
-  - **Entonces** el sistema debe guardar la regla y aplicarla a las mascotas asociadas.  
-
-- **Escenario 2:** Notificación por umbral excedido  
-  - **Dado que** se ha configurado un umbral para "actividad física <30min/día",  
-  - **Cuando** el dispositivo reporta un valor inferior,  
-  - **Entonces** el sistema debe enviar una notificación push y por correo al dueño y veterinario. 
+| User Story ID | Título | Descripción|Criterios de Aceptación|Relacionado con (Epic ID)|
+|---------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
+| US23          | Cambio de Idioma en la App Web | Como usuario, quiero tener la opción de cambiar el idioma de la aplicación web para poder utilizarla en inglés o español, de acuerdo con mi preferencia.|**Escenario 1:** Cambio exitoso de idioma<br>**Dado que** el usuario accede a la configuración de idioma,<br>**Cuando** selecciona "Español" o "Inglés" y guarda la preferencia,<br>**Entonces** la interfaz debe actualizarse inmediatamente al idioma seleccionado, incluyendo menús, botones y contenido estático.<br><br>**Escenario 2:** Persistencia de preferencia<br>**Dado que** el usuario ha cambiado el idioma anteriormente,<br>**Cuando** cierra sesión y vuelve a ingresar,<br>**Entonces** el sistema debe mantener el último idioma seleccionado.|EP10|
 
 ---
 
