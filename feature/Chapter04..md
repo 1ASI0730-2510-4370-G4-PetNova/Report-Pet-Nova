@@ -370,19 +370,19 @@ Descarga de historial clinico
 
 dashboard
 
-![dashboard_wire.png](assets/Chapter04/dashboard_wire.png)
+![dashboard_wire.jpeg](assets/Chapter04/dashboard_wire.jpeg)
 
 Registro de perfil
 
-![perfil_edit_wire.png](assets/Chapter04/perfil_edit_wire.png)
+![perfil_edit_wire.jpeg](assets/Chapter04/perfil_edit_wire.jpeg)
 
 Edición del perfil del perfil
 
-![perfil_edit_wire.png](assets/Chapter04/perfil_edit_wire.png)
+![perfil_edit_wire.jpeg](assets/Chapter04/perfil_edit_wire.jpeg)
 
 Eliminacion de perfil  
 
-![perfil_delete_wire.png](assets/Chapter04/perfil_delete_wire  .png)
+![perfil_delete_wire.png](assets/Chapter04/perfil_delete_wire.png)
 
 
 ## movil:
@@ -509,12 +509,12 @@ Descarga de historial clinico
 
 Muestra de perfil
 
-![perfil_list.png](assets/Chapter04/perfil_list.png)
+![perfil_list.jpeg](assets/Chapter04/perfil_list.jpeg)
 
 
 Edición del perfil del perfil
 
-![perfil_edit.png](assets/Chapter04/perfil_edit.png)
+![perfil_edit.jpeg](assets/Chapter04/perfil_edit.jpeg)
 
 Eliminacion de perfil
 
